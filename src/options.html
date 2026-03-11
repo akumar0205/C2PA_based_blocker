@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C2PA AI Image Blocker Options</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <h1>C2PA AI Image Blocker</h1>
+      <label class="option-row">
+        <input id="enabled" type="checkbox" />
+        <span>Enable image replacement</span>
+      </label>
+
+      <label class="option-row">
+        <input id="strictMode" type="checkbox" />
+        <span>Strict mode (replace when C2PA metadata exists but cannot be verified)</span>
+      </label>
+
+      <label for="allowlist">Allowlist domains (comma or newline separated)</label>
+      <textarea id="allowlist" rows="8" placeholder="example.com\nnews-site.org"></textarea>
+
+      <button id="saveButton">Save options</button>
+      <p id="status" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>

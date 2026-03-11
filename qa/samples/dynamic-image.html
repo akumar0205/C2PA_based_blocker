@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <body>
+    <h1>Dynamic image insertion</h1>
+    <div id="mount"></div>
+    <script>
+      setTimeout(() => {
+        const img = document.createElement('img');
+        img.width = 400;
+        img.src = './assets/ai-c2pa-signal.svg';
+        document.getElementById('mount').appendChild(img);
+      }, 800);
+    </script>
+  </body>
+</html>

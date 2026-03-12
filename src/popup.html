@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C2PA Controls</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <h1>C2PA Quick Actions</h1>
+      <p id="siteLabel" class="muted"></p>
+
+      <div class="actions">
+        <button id="pauseSiteBtn">Pause on this site</button>
+        <button id="pauseHourBtn">Pause for 1 hour</button>
+        <button id="restoreBtn">Restore all blocked images</button>
+        <button id="openOptionsBtn" class="secondary">Open options</button>
+      </div>
+
+      <p id="status" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

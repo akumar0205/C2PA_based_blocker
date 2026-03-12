@@ -258,3 +258,28 @@ button:active {
     padding: 12px;
   }
 }
+
+
+.field-label {
+  display: block;
+  font-weight: 600;
+  color: var(--brown-700);
+  font-size: 14px;
+  margin: 10px 0 8px;
+}
+
+select {
+  width: 100%;
+  border: 1px solid var(--brown-200);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--brown-700);
+  background: var(--bg-card);
+  margin-bottom: 8px;
+}
+
+select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

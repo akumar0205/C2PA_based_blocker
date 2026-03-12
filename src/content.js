@@ -2,6 +2,7 @@
   const DEFAULT_OPTIONS = {
     enabled: true,
     strictMode: false,
+    verifyCryptographic: true,
     allowlist: ""
   };
 
@@ -82,7 +83,7 @@
       return urlResults.get(url);
     }
 
-    const result = await window.C2PADetector.analyzeImage(url);
+    const result = await window.C2PADetector.analyzeImage(url, userOptions.verifyCryptographic);
     urlResults.set(url, result);
     return result;
   }

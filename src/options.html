@@ -10,44 +10,61 @@
     <main>
       <div class="header">
         <h1>C2PA AI Image Blocker</h1>
-        <p class="subtitle">Detect and block AI-generated images using C2PA cryptographic verification</p>
+        <p class="subtitle">Soft-warning by default with explainable AI-signal annotations.</p>
       </div>
 
       <div class="section">
         <h2 class="section-title">General Settings</h2>
-        
+
         <label class="option-row">
           <input id="enabled" type="checkbox" />
           <div class="option-content">
-            <span class="option-label">Enable image replacement</span>
-            <span class="option-description">Automatically replace detected AI-generated images with a warning placeholder</span>
+            <span class="option-label">Enable image scanning</span>
+            <span class="option-description">Analyze images for C2PA + AI signals on supported pages.</span>
+          </div>
+        </label>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Blocking Behavior</h2>
+
+        <label class="field-label" for="replaceMode">Mode</label>
+        <select id="replaceMode">
+          <option value="annotate">Soft warning (recommended)</option>
+          <option value="replace">Auto replace flagged images</option>
+        </select>
+
+        <label class="field-label" for="autoReplaceConfidence">Auto replace threshold</label>
+        <select id="autoReplaceConfidence">
+          <option value="high">High confidence only (verified AI)</option>
+          <option value="medium">Medium + high confidence</option>
+          <option value="low">All flagged confidence levels</option>
+        </select>
+
+        <label class="option-row">
+          <input id="strictMode" type="checkbox" />
+          <div class="option-content">
+            <span class="option-label">Strict mode</span>
+            <span class="option-description">Also replace unverified C2PA images even without AI claim (replace mode only).</span>
           </div>
         </label>
       </div>
 
       <div class="section">
         <h2 class="section-title">Detection Settings</h2>
-        
+
         <label class="option-row">
           <input id="verifyCryptographic" type="checkbox" />
           <div class="option-content">
             <span class="option-label">Cryptographic verification</span>
-            <span class="option-description">Verify C2PA signatures using Web Crypto API for higher confidence detection</span>
-          </div>
-        </label>
-
-        <label class="option-row">
-          <input id="strictMode" type="checkbox" />
-          <div class="option-content">
-            <span class="option-label">Strict mode</span>
-            <span class="option-description">Replace images when C2PA metadata exists but cannot be cryptographically verified</span>
+            <span class="option-description">Verify C2PA signatures using Web Crypto API for higher-confidence detection.</span>
           </div>
         </label>
       </div>
 
       <div class="section allowlist-section">
         <label for="allowlist" class="allowlist-label">Allowlist domains</label>
-        <span class="allowlist-description">Domains where image replacement will be disabled. Separate with commas or new lines.</span>
+        <span class="allowlist-description">Domains where image replacement/annotation will be disabled. Separate with commas or new lines.</span>
         <textarea id="allowlist" placeholder="example.com&#10;news-site.org&#10;myportfolio.com"></textarea>
       </div>
 
